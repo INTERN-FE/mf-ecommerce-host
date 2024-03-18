@@ -1,5 +1,5 @@
 import React from "react";
-import useAuthentication from "../hooks/use-authentication";
+import useAuthentication from "../hooks/useAuthentication.hook";
 
 function MainPage() {
   const test = useAuthentication();

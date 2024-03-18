@@ -18,10 +18,9 @@ const useAuthentication = () => {
     fetchCookies();
   }, []);
 
-  return {
-    isLoggedIn,
-    isLoading,
-  };
+  if (!isLoading) {
+    return isLoggedIn;
+  }
 };
 
 export default useAuthentication;
