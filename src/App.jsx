@@ -6,16 +6,16 @@ import "./index.scss";
 import MainPage from "./pages/main-page";
 import AuthPage from "./pages/auth/auth-page";
 
-const App = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/">
-        <Route index element={<MainPage />} />
-        {/* {!useAuthentication && ( */}
-        <Route path="auth" element={<AuthPage />} />
-        {/* )} */}
-      </Route>
-    </Routes>
-  </BrowserRouter>
-);
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/">
+          <Route index element={<MainPage />} />
+          <Route path="auth" element={<AuthPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+};
 ReactDOM.render(<App />, document.getElementById("app"));
