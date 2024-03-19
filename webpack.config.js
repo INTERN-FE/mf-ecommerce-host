@@ -64,10 +64,10 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "mf-ecommerce-host",
+      name: "mf_ecommerce_host",
       filename: "remoteEntry.js",
       remotes: {
-        host: "host@http://localhost:3000/remoteEntry.js",
+        mf_list_product: "mf_list_product@http://localhost:4251/remoteEntry.js",
       },
       exposes: {},
       shared: {

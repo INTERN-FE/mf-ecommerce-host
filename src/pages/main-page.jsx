@@ -1,11 +1,10 @@
 import React from "react";
-import useAuthentication from "../hooks/useAuthentication.hook";
+
+// Remote Components
+import ListProduct from "mf_list_product/ListProduct";
 
 function MainPage() {
-  const test = useAuthentication();
-
-  console.log(test);
-  return <div>Hello</div>;
+  return <ListProduct />;
 }
 
 export default MainPage;
