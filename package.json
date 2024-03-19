@@ -1,5 +1,5 @@
 {
-  "name": "mf-ecommerce",
+  "name": "mf-ecommerce-host",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",
@@ -35,10 +35,12 @@
     "@babel/runtime": "^7.13.10",
     "@tailwindcss/forms": "^0.5.7",
     "axios": "^1.6.8",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.51.1",
     "react-router-dom": "^6.22.3",
+    "react-svg-loader": "^3.0.3",
     "serve": "^14.2.1",
     "universal-cookie": "^7.1.0"
   }
