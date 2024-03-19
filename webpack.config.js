@@ -68,6 +68,8 @@ module.exports = {
       filename: "remoteEntry.js",
       remotes: {
         mf_list_product: "mf_list_product@http://localhost:4251/remoteEntry.js",
+        mf_payment_and_cart:
+          "mf_payment_and_cart@http://localhost:4252/remoteEntry.js",
       },
       exposes: {},
       shared: {

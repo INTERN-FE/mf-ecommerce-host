@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 // Remote Components
 import DetailProduct from "mf_list_product/DetailProduct";
+import Payment from "mf_payment_and_cart/Payment";
 
 // Host Components
 import "./index.scss";
@@ -20,6 +21,7 @@ const App = () => {
             <Route index element={<MainPage />} />
             <Route path="auth" element={<AuthPage />} />
             <Route path="detail/:id" element={<DetailProduct />} />
+            <Route path="payment" element={<Payment />} />
           </Route>
         </Routes>
       </BaseLayout>
