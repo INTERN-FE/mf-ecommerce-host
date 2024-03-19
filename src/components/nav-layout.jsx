@@ -9,7 +9,7 @@ function NavLayout() {
   const cookies = new Cookies();
 
   return (
-    <nav className="bg-white backdrop-blur-3xl fixed w-full z-20 top-0 left-0">
+    <nav className="bg-white bg-opacity-70 backdrop-filter backdrop-blur-3xl fixed w-full z-20 top-0 left-0">
       <div className="max-w-screen-xl flex flex-wrap items-center mx-auto p-4 px-[24px]">
         <Link className="flex-grow" to="/">
           <div className="flex items-center">
