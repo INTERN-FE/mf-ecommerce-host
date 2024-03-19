@@ -5,7 +5,7 @@ const Dotenv = require("dotenv-webpack");
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
-    publicPath: "http://localhost:4250/",
+    publicPath: process.env.BASE_HOST_URL ?? "http://localhost:4250/",
   },
 
   resolve: {
@@ -67,9 +67,12 @@ module.exports = {
       name: "mf_ecommerce_host",
       filename: "remoteEntry.js",
       remotes: {
-        mf_list_product: "mf_list_product@http://localhost:4251/remoteEntry.js",
-        mf_payment_and_cart:
-          "mf_payment_and_cart@http://localhost:4252/remoteEntry.js",
+        mf_list_product: `mf_list_product@${
+          process.env.MF_LIST_PRODUCT_HOST_URL ?? "http://localhost:4251/"
+        }remoteEntry.js`,
+        mf_payment_and_cart: `mf_payment_and_cart@${
+          process.env.MF_PAYMENT_CART_HOST_URL ?? "http://localhost:4252/"
+        }remoteEntry.js`,
       },
       exposes: {},
       shared: {
