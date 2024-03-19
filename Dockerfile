@@ -1,13 +1,13 @@
-FROM node:21.7.1-alpine
+FROM node:alpine as builder
 WORKDIR /app
+COPY package.json .
+COPY yarn.lock .
+RUN yarn
+COPY . .
+RUN yarn build
 
-ENV PATH /app/node_modules/.bin:$PATH
+EXPOSE 4250
 
-RUN apk add --no-cache git
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm ci
+RUN apk add --no-cache bash
 
-COPY . ./
-
-CMD ["npm", "start"]
+CMD [ "yarn", "build:start" ]
