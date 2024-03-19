@@ -22,22 +22,24 @@ function SignUpForm() {
 
   return (
     <form className="flex flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
+      <h5>Email Address</h5>
       <input
         {...register("email")}
-        className="p-3 rounded-xl"
-        placeholder="Email Address"
+        className="p-3 rounded-xl bg-gray"
+        placeholder="Enter your email address"
       />
+      <h5>Password</h5>
       <input
         {...register("password")}
         type="password"
-        className="p-3 rounded-xl"
-        placeholder="Password"
+        className="p-3 rounded-xl bg-gray"
+        placeholder="Enter your secure password"
       />
       <button
-        className="p-3 rounded-full bg-black text-white font-medium"
+        className="my-3 p-3 rounded-full bg-primary text-white font-medium"
         type="submit"
       >
-        Sign Up
+        Create My Account
       </button>
     </form>
   );

@@ -33,22 +33,24 @@ function LoginForm() {
 
   return (
     <form className="flex flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
+      <h5 className="font-medium">Email Address</h5>
       <input
         {...register("email")}
-        className="p-3 rounded-xl"
-        placeholder="Email Address"
+        className="p-3 rounded-xl bg-gray"
+        placeholder="Enter your Email Address"
       />
+      <h5 className="font-medium">Password</h5>
       <input
         {...register("password")}
         type="password"
-        className="p-3 rounded-xl"
-        placeholder="Password"
+        className="p-3 rounded-xl bg-gray"
+        placeholder="Enter your Password"
       />
       <button
-        className="p-3 rounded-full bg-black text-white font-medium"
+        className="my-3 p-3 rounded-full bg-primary text-white font-medium"
         type="submit"
       >
-        Sign In
+        Sign In to My Account
       </button>
     </form>
   );
