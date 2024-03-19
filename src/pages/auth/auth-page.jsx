@@ -5,14 +5,14 @@ import SignUpForm from "./components/signup-form";
 
 import AuthIllustration from "../../static/images/login_illustration.png";
 
-export default function AuthPage() {
+const AuthPage = () => {
   // TO-DO
   // usePrivateRoute();
   const [useTab, setUseTab] = useState(0);
 
   return (
-    <div className="container relative max-w-screen-xl h-screen flex-col items-center justify-center grid lg:grid-cols-2 lg:px-0 font-poppins">
-      <div className="relative hidden justify-center items-center h-screen flex-col bg-muted p-10 lg:flex">
+    <div className="container relative max-w-screen-xl flex-col items-center justify-center grid lg:grid-cols-2 lg:px-0 font-poppins">
+      <div className="relative hidden justify-center items-center flex-col bg-muted p-10 lg:flex">
         <img alt="Auth" src={AuthIllustration} />
       </div>
       <div className="lg:p-8 mx-8 md:mx-0">
@@ -55,4 +55,6 @@ export default function AuthPage() {
       </div>
     </div>
   );
-}
+};
+
+export default AuthPage;

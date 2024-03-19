@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { BASE_AUTH_API_URL } from "../../../constants/base-api";
 import axios from "axios";
 
-function SignUpForm() {
+const SignUpForm = () => {
   const {
     register,
     handleSubmit,
@@ -25,14 +25,14 @@ function SignUpForm() {
       <h5>Email Address</h5>
       <input
         {...register("email")}
-        className="p-3 rounded-xl bg-gray"
+        className="p-3 rounded-xl bg-gray-50 border-none"
         placeholder="Enter your email address"
       />
       <h5>Password</h5>
       <input
         {...register("password")}
         type="password"
-        className="p-3 rounded-xl bg-gray"
+        className="p-3 rounded-xl bg-gray-50 border-none"
         placeholder="Enter your secure password"
       />
       <button
@@ -43,6 +43,6 @@ function SignUpForm() {
       </button>
     </form>
   );
-}
+};
 
 export default SignUpForm;

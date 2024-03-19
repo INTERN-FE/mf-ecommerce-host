@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 
 // Remote Components
 import DetailProduct from "mf_list_product/DetailProduct";
@@ -13,7 +13,7 @@ import BaseLayout from "./components/base-layout";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <BaseLayout>
         <Routes>
           <Route path="/">
@@ -23,7 +23,8 @@ const App = () => {
           </Route>
         </Routes>
       </BaseLayout>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
+
 ReactDOM.render(<App />, document.getElementById("app"));

@@ -6,12 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { BASE_AUTH_API_URL } from "../../../constants/base-api";
 import axios from "axios";
 
-function LoginForm() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+const LoginForm = () => {
+  const { register, handleSubmit } = useForm();
   const cookies = new Cookies();
   const navigate = useNavigate();
   const onSubmit = (data) => {
@@ -54,6 +50,6 @@ function LoginForm() {
       </button>
     </form>
   );
-}
+};
 
 export default LoginForm;
