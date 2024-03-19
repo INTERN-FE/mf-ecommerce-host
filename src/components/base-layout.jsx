@@ -6,7 +6,9 @@ function BaseLayout({ children }) {
   return (
     <div className="z-10">
       <NavLayout />
-      <div className=" min-h-screen">{children}</div>
+      <div className="container max-w-screen-xl mt-32 min-h-screen">
+        {children}
+      </div>
       <FooterLayout />
     </div>
   );
