@@ -19,7 +19,11 @@ module.exports = {
           100: "#5D1F1F",
           150: "#501818",
         },
-        gray: "#F3F3F3",
+        gray: {
+          50: "#F3F3F3",
+          100: "#E4E4E4",
+          150: "#979797",
+        },
       },
     },
   },
@@ -33,7 +37,7 @@ module.exports = {
         "@font-face": {
           fontFamily: "Poppins",
           fontWeight: "400",
-          src: "url(/src/statics/fonts/Poppins-Regular.ttf)",
+          src: "url(/src/static/fonts/Poppins-Regular.ttf)",
         },
       });
     }),
@@ -42,7 +46,7 @@ module.exports = {
         "@font-face": {
           fontFamily: "Poppins",
           fontWeight: "500",
-          src: "url(/src/statics/fonts/Poppins-Medium.ttf)",
+          src: "url(/src/static/fonts/Poppins-Medium.ttf)",
         },
       });
     }),
@@ -51,7 +55,7 @@ module.exports = {
         "@font-face": {
           fontFamily: "Poppins",
           fontWeight: "600",
-          src: "url(/src/statics/fonts/Poppins-SemiBold.ttf)",
+          src: "url(/src/static/fonts/Poppins-SemiBold.ttf)",
         },
       });
     }),
@@ -60,7 +64,7 @@ module.exports = {
         "@font-face": {
           fontFamily: "Poppins",
           fontWeight: "700",
-          src: "url(/src/statics/fonts/Poppins-Bold.ttf)",
+          src: "url(/src/static/fonts/Poppins-Bold.ttf)",
         },
       });
     }),
@@ -69,7 +73,7 @@ module.exports = {
         "@font-face": {
           fontFamily: "Poppins",
           fontWeight: "800",
-          src: "url(/src/statics/fonts/Poppins-ExtraBold.ttf)",
+          src: "url(/src/static/fonts/Poppins-ExtraBold.ttf)",
         },
       });
     }),

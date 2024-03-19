@@ -36,14 +36,14 @@ function LoginForm() {
       <h5 className="font-medium">Email Address</h5>
       <input
         {...register("email")}
-        className="p-3 rounded-xl bg-gray"
+        className="p-3 rounded-xl bg-gray-50 border-none"
         placeholder="Enter your Email Address"
       />
       <h5 className="font-medium">Password</h5>
       <input
         {...register("password")}
         type="password"
-        className="p-3 rounded-xl bg-gray"
+        className="p-3 rounded-xl bg-gray-50 border-none"
         placeholder="Enter your Password"
       />
       <button

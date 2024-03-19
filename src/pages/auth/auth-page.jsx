@@ -3,7 +3,7 @@ import { useState } from "react";
 import LoginForm from "./components/login-form";
 import SignUpForm from "./components/signup-form";
 
-import AuthIllustration from "../../assets/images/login_illustration.png";
+import AuthIllustration from "../../static/images/login_illustration.png";
 
 export default function AuthPage() {
   // TO-DO
