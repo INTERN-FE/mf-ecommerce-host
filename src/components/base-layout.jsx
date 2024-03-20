@@ -18,7 +18,7 @@ import FooterLayout from "./footer-layout";
 
 function BaseLayout({ children }) {
   return (
-    <div className="z-10">
+    <div className="z-10 font-poppins">
       <NavLayout />
       <div className="container max-w-screen-xl mt-32 min-h-screen px-6 pb-32 md:px-0">
         {children}

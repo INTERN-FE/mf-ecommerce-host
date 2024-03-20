@@ -24,7 +24,7 @@ const AuthPage = () => {
   const [useTab, setUseTab] = useState(0);
 
   return (
-    <div className="container relative max-w-screen-xl flex-col items-center justify-center grid lg:grid-cols-2 lg:px-0 font-poppins">
+    <div className="container relative max-w-screen-xl flex-col items-center justify-center grid lg:grid-cols-2 lg:px-0">
       <div className="relative hidden justify-center items-center flex-col bg-muted p-10 lg:flex">
         <img alt="Auth" src={AuthIllustration} />
       </div>
