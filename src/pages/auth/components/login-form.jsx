@@ -1,10 +1,24 @@
+/*
+ * Copyright Intern MSIB6 @ PT Len Industri (Persero)
+ *
+ * THIS SOFTWARE SOURCE CODE AND ANY EXECUTABLE DERIVED THEREOF ARE PROPRIETARY
+ * TO PT LEN INDUSTRI (PERSERO), AS APPLICABLE, AND SHALL NOT BE USED IN ANY WAY
+ * OTHER THAN BEFOREHAND AGREED ON BY PT LEN INDUSTRI (PERSERO), NOR BE REPRODUCED
+ * OR DISCLOSED TO THIRD PARTIES WITHOUT PRIOR WRITTEN AUTHORIZATION BY
+ * PT LEN INDUSTRI (PERSERO), AS APPLICABLE.
+ *
+ * Created Date: Monday, March 18th 2024, 3:51:34 pm
+ * Author: Jody Yuantoro | jodyyuan@xyzuan.my.id <https://github.com/xyzuan>
+ *
+ */
+
 import React from "react";
+import axios from "axios";
 import Cookies from "universal-cookie";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 import { BASE_AUTH_API_URL } from "../../../constants/base-api";
-import axios from "axios";
 
 const LoginForm = () => {
   const { register, handleSubmit } = useForm();

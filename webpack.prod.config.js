@@ -7,7 +7,7 @@ module.exports = {
   output: {
     clean: true,
     filename: "[name].bundle.js",
-    publicPath: "http://localhost:4250/",
+    publicPath: "https://ecommerce.xyzuan.my.id/",
   },
 
   resolve: {
@@ -56,7 +56,7 @@ module.exports = {
           {
             loader: "react-svg-loader",
             options: {
-              jsx: true,
+              jsx: true, // true outputs JSX tags
             },
           },
         ],
@@ -69,8 +69,8 @@ module.exports = {
       name: "mf_ecommerce_host",
       filename: "remoteEntry.js",
       remotes: {
-        mf_list_product: `mf_list_product@http://localhost:4251/remoteEntry.js`,
-        mf_payment_and_cart: `mf_payment_and_cart@http://localhost:4252/remoteEntry.js`,
+        mf_list_product: `mf_list_product@https://mf-list-product.xyzuan.my.id/remoteEntry.js`,
+        mf_payment_and_cart: `mf_payment_and_cart@https://mf-cart-payment.xyzuan.my.id/remoteEntry.js`,
       },
       exposes: {},
       shared: {

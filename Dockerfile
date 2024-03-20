@@ -1,3 +1,17 @@
+/*
+ * Copyright Intern MSIB6 @ PT Len Industri (Persero)
+ *
+ * THIS SOFTWARE SOURCE CODE AND ANY EXECUTABLE DERIVED THEREOF ARE PROPRIETARY
+ * TO PT LEN INDUSTRI (PERSERO), AS APPLICABLE, AND SHALL NOT BE USED IN ANY WAY
+ * OTHER THAN BEFOREHAND AGREED ON BY PT LEN INDUSTRI (PERSERO), NOR BE REPRODUCED
+ * OR DISCLOSED TO THIRD PARTIES WITHOUT PRIOR WRITTEN AUTHORIZATION BY
+ * PT LEN INDUSTRI (PERSERO), AS APPLICABLE.
+ *
+ * Created Date: Monday, March 18th 2024, 3:51:34 pm
+ * Author: Jody Yuantoro | jodyyuan@xyzuan.my.id <https://github.com/xyzuan>
+ *
+ */
+
 FROM node:alpine as builder
 
 # Environtment Setup
@@ -15,7 +29,7 @@ COPY package.json .
 COPY yarn.lock .
 RUN yarn --frozen-lockfile
 COPY . .
-RUN yarn build
+RUN yarn build:prod
 
 EXPOSE 4250
 RUN apk add --no-cache bash

@@ -2,7 +2,7 @@
   "name": "mf-ecommerce-host",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --mode production",
+    "build:prod": "webpack --mode production --config webpack.config.prod.js",
     "build:dev": "webpack --mode development",
     "build:start": "cd dist && PORT=4250 npx serve",
     "start": "webpack serve --mode development",
