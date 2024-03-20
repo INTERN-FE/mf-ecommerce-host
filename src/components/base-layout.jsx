@@ -20,7 +20,7 @@ function BaseLayout({ children }) {
   return (
     <div className="z-10">
       <NavLayout />
-      <div className="container max-w-screen-xl mt-32 min-h-screen">
+      <div className="container max-w-screen-xl mt-32 min-h-screen px-6 pb-32 md:px-0">
         {children}
       </div>
       <FooterLayout />
