@@ -25,9 +25,9 @@ import "./index.scss";
 import MainPage from "./pages/main-page";
 import AuthPage from "./pages/auth/auth-page";
 import BaseLayout from "./components/base-layout";
-import { useCart } from "./hooks/useCart";
+import { useCart } from "./utils/useCart";
 
-const App = () => {
+export const App = () => {
   const { state, dispatch } = useCart();
 
   const cartItem = state.products;
