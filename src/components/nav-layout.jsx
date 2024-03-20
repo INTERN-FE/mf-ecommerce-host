@@ -27,7 +27,7 @@ function NavLayout() {
       <div className="max-w-screen-xl flex flex-wrap items-center mx-auto p-4 px-[24px]">
         <Link className="flex-grow" to="/">
           <div className="flex items-center">
-            <span className="self-center text-2xl font-semibold whitespace-nowrap text-primary leading-none">
+            <span className="ml-3 self-center text-2xl font-semibold whitespace-nowrap text-primary leading-none">
               <Logo />
             </span>
           </div>
