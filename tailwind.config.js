@@ -55,7 +55,6 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require("@tailwindcss/forms"),
     plugin(function ({ addBase }) {
       addBase({
         "@font-face": {
