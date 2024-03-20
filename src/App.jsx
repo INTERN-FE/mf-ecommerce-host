@@ -12,11 +12,14 @@
  *
  */
 
-import React from "react";
+import React, { lazy } from "react";
 import ReactDOM from "react-dom";
 import { HashRouter, Route, Routes } from "react-router-dom";
+import { ErrorBoundary } from "react-error-boundary";
 
 // Remote Components
+// const { DetailProduct } = lazy(() => import("mf_list_product/DetailProduct"));
+// const Payment = lazy(() => import("mf_payment_and_cart/Payment"));
 import { DetailProduct } from "mf_list_product/DetailProduct";
 import Payment from "mf_payment_and_cart/Payment";
 
@@ -25,6 +28,7 @@ import "./index.scss";
 import MainPage from "./pages/main-page";
 import AuthPage from "./pages/auth/auth-page";
 import BaseLayout from "./components/base-layout";
+import NoService from "./components/no-service";
 import { useCart } from "./utils/useCart";
 
 const App = () => {
@@ -42,10 +46,23 @@ const App = () => {
             <Route
               path="detail/:id"
               element={
-                <DetailProduct dispatch={dispatch} cartItem={cartItem} />
+                <ErrorBoundary
+                  fallback={<NoService serviceName="mf_list_product" />}
+                >
+                  <DetailProduct dispatch={dispatch} cartItem={cartItem} />
+                </ErrorBoundary>
               }
             />
-            <Route path="payment" element={<Payment />} />
+            <Route
+              path="payment"
+              element={
+                <ErrorBoundary
+                  fallback={<NoService serviceName="mf_payment_and_cart" />}
+                >
+                  <Payment />
+                </ErrorBoundary>
+              }
+            />
           </Route>
         </Routes>
       </BaseLayout>

@@ -12,13 +12,30 @@
  *
  */
 
-import React from "react";
+import React, { Suspense, lazy } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import Loading from "react-simple-loading";
 
 // Remote Components
-import ListProduct from "mf_list_product/ListProduct";
+const ListProduct = lazy(() => import("mf_list_product/ListProduct"));
+
+// Host Components
+import NoService from "../components/no-service";
 
 const MainPage = () => {
-  return <ListProduct />;
+  return (
+    <ErrorBoundary fallback={<NoService serviceName="mf_list_product" />}>
+      <Suspense
+        fallback={
+          <div className="h-screen">
+            <Loading />
+          </div>
+        }
+      >
+        <ListProduct />
+      </Suspense>
+    </ErrorBoundary>
+  );
 };
 
 export default MainPage;
