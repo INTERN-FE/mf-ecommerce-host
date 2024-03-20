@@ -17,7 +17,7 @@ import ReactDOM from "react-dom";
 import { HashRouter, Route, Routes } from "react-router-dom";
 
 // Remote Components
-import DetailProduct from "mf_list_product/DetailProduct";
+import { DetailProduct } from "mf_list_product/DetailProduct";
 import Payment from "mf_payment_and_cart/Payment";
 
 // Host Components
@@ -27,7 +27,7 @@ import AuthPage from "./pages/auth/auth-page";
 import BaseLayout from "./components/base-layout";
 import { useCart } from "./utils/useCart";
 
-export const App = () => {
+const App = () => {
   const { state, dispatch } = useCart();
 
   const cartItem = state.products;
