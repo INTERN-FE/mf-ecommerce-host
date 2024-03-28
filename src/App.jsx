@@ -12,7 +12,7 @@
  *
  */
 
-import React, { lazy } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
@@ -20,8 +20,9 @@ import { ErrorBoundary } from "react-error-boundary";
 // Remote Components
 // const { DetailProduct } = lazy(() => import("mf_list_product/DetailProduct"));
 // const Payment = lazy(() => import("mf_payment_and_cart/Payment"));
-import { DetailProduct } from "mf_list_product/DetailProduct";
-import Payment from "mf_payment_and_cart/Payment";
+// import { DetailProduct } from "mf_list_product/DetailProduct";
+const Payment = React.lazy(() => import("mf_payment_and_cart/Payment"));
+const DetailProduct = React.lazy(() => import("mf_list_product/DetailProduct"));
 
 // Host Components
 import "./index.scss";
@@ -49,7 +50,9 @@ const App = () => {
                 <ErrorBoundary
                   fallback={<NoService serviceName="mf_list_product" />}
                 >
-                  <DetailProduct dispatch={dispatch} cartItem={cartItem} />
+                  <React.Suspense fallback={<p>Loading...</p>}>
+                    <DetailProduct dispatch={dispatch} cartItem={cartItem} />
+                  </React.Suspense>
                 </ErrorBoundary>
               }
             />
@@ -59,9 +62,12 @@ const App = () => {
                 <ErrorBoundary
                   fallback={<NoService serviceName="mf_payment_and_cart" />}
                 >
-                  <Payment />
+                  <React.Suspense fallback={<p>Loading...</p>}>
+                    <Payment />
+                  </React.Suspense>
                 </ErrorBoundary>
               }
+              errorElement={<p>Error ngafs</p>}
             />
           </Route>
         </Routes>

@@ -18,7 +18,7 @@ import PropTypes from "prop-types";
 function NoService({ serviceName }) {
   return (
     <div className="flex flex-col h-screen justify-center items-center">
-      <h1 className="text-9xl font-black mb-3">404</h1>
+      <h1 className="text-9xl font-black mb-3">500</h1>
       <h5 className="text-xl font-medium text-center">{`Service ${serviceName}, Not Available`}</h5>
     </div>
   );
