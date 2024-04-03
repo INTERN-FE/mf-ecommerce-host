@@ -9,28 +9,28 @@
  *
  * Created Date: Tuesday, March 19th 2024, 11:57:18 am
  * Author: Jody Yuantoro | jodyyuan@xyzuan.my.id <https://github.com/xyzuan>
+ * Author: Agustinus Wesly Sitanggang | agustchannel@gmail.com <https://github.com/agus-wesly>
  *
  */
 
 import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import { ErrorBoundary } from "react-error-boundary";
 
 // Remote Components
 // const { DetailProduct } = lazy(() => import("mf_list_product/DetailProduct"));
 // const Payment = lazy(() => import("mf_payment_and_cart/Payment"));
 // import { DetailProduct } from "mf_list_product/DetailProduct";
-const Payment = React.lazy(() => import("mf_payment_and_cart/Payment"));
-const DetailProduct = React.lazy(() => import("mf_list_product/DetailProduct"));
+// const Payment = React.lazy(() => import("mf_payment_and_cart/Payment"));
+// const DetailProduct = React.lazy(() => import("mf_list_product/DetailProduct"));
 
 // Host Components
 import "./index.scss";
 import MainPage from "./pages/main-page";
 import AuthPage from "./pages/auth/auth-page";
 import BaseLayout from "./components/base-layout";
-import NoService from "./components/no-service";
 import { useCart } from "./utils/useCart";
+import LazyLoadedComponent from "./components/lazy-loaded";
 
 const App = () => {
   const { state, dispatch } = useCart();
@@ -47,27 +47,26 @@ const App = () => {
             <Route
               path="detail/:id"
               element={
-                <ErrorBoundary
-                  fallback={<NoService serviceName="mf_list_product" />}
-                >
-                  <React.Suspense fallback={<p>Loading...</p>}>
-                    <DetailProduct dispatch={dispatch} cartItem={cartItem} />
-                  </React.Suspense>
-                </ErrorBoundary>
+                <LazyLoadedComponent
+                  scope={"mf_list_product"}
+                  url={"http://localhost:4251/remoteEntry.js"}
+                  module={"./DetailProduct"}
+                  Loader={() => <p>Loading...</p>}
+                  dispatch={dispatch}
+                  cartItem={cartItem}
+                />
               }
             />
             <Route
               path="payment"
               element={
-                <ErrorBoundary
-                  fallback={<NoService serviceName="mf_payment_and_cart" />}
-                >
-                  <React.Suspense fallback={<p>Loading...</p>}>
-                    <Payment />
-                  </React.Suspense>
-                </ErrorBoundary>
+                <LazyLoadedComponent
+                  scope={"mf_payment_and_cart"}
+                  url={"http://localhost:4252/remoteEntry.js"}
+                  module={"./Payment"}
+                  Loader={() => <p>Loading...</p>}
+                />
               }
-              errorElement={<p>Error ngafs</p>}
             />
           </Route>
         </Routes>

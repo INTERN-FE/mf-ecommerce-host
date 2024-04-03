@@ -15,11 +15,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function NoService({ serviceName }) {
+function NoService({ serviceName, resetErrorBoundary }) {
   return (
     <div className="flex flex-col h-screen justify-center items-center">
       <h1 className="text-9xl font-black mb-3">500</h1>
       <h5 className="text-xl font-medium text-center">{`Service ${serviceName}, Not Available`}</h5>
+
+      <button onClick={resetErrorBoundary}>Retry</button>
     </div>
   );
 }
